@@ -1,8 +1,11 @@
 import { combineReducers } from "redux";
-// import { userReducer } from "./user/user-reducer";
+import { beersReducer } from "./beers/beers-reducer";
+import { beerByIdReducer } from "./beers/beer-by-id-reducer";
+
 
 const allReducers = combineReducers({
-  // user: userReducer,
+  beers: beersReducer,
+  beerByIdReducer,
 });
 
 const reducers = (state, action) => {
