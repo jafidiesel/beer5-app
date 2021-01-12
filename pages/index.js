@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Button } from 'antd';
 
-export default function Home() {
+import beerService from '../services/beerService'
+import BeerList from '../components/BeerList';
+
+
+export default function Home({ beerData }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -11,18 +14,21 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next....js!</a>
-        </h1>
 
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
+        <BeerList beerData={beerData}/>
+        
       </main>
-
     </div>
   )
+}
+
+export async function getStaticProps() {
+  // get data
+  const beerData = await beerService.getBeers();
+
+	return {
+		props: {
+			beerData
+		}
+	}
 }
