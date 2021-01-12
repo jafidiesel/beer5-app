@@ -11,7 +11,7 @@ const HeaderComponent =({children}) =>{
         <style global jsx>{`
         header {
           color: #fff;
-          img: 
+          font-size: 30px;
         }
       `}</style>
       </>
