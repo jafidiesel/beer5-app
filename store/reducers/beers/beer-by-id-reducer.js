@@ -7,7 +7,7 @@ const FETCH_STATUS = {
   FAILED: "FAILED",
 };
 
-export const beersReducer = (
+export const beerByIdReducer = (
   state = {
     data: [],
     status: FETCH_STATUS.NOT_LOADED,
